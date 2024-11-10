@@ -45,6 +45,32 @@ def run_code(spark):
     )
     concat_df.show()
 
+    print("=======================================")
+    print("Splitting clerk column by '#' delimiter")
+    print("=======================================")
+    split_df = (
+        spark.table("orders")
+        .select(
+            split(col("clerk"), "#")
+            .alias("split_clerk")
+        )
+        .limit(10)
+    )
+    split_df.show()
+
+    print("=======================================")
+    print("Extracting first 5 characters of clerk column")
+    print("=======================================")
+    substr_df = (
+        spark.table("orders")
+        .select(
+            col("clerk"),
+            substring("clerk",1,5)
+            .alias("clerk_substring")
+        )
+        .limit(10)
+    )
+    substr_df.show()
 
 
 if __name__ == '__main__':
