@@ -1,15 +1,20 @@
+/*
+GROUP BY 
+*/
+
+-- COUNT number of orders for each order_priority level
+
 USE tpch;
 
--- Example
 SELECT
     orderpriority,
-    count(*) AS num_orders
-FROM
+    count(*) AS number_orders
+FROM 
     orders
 GROUP BY
     orderpriority;
 
--- Numbers may vary slightly
+    -- Numbers may vary slightly
 /*
  5-LOW   300589
  3-MEDIUM        298723
