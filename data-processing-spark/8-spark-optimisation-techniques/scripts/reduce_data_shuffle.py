@@ -8,7 +8,7 @@ def run_code(spark):
     print("=======================================")
     # Read data from Minio
     parkViolations = spark.read.option("header", True).csv("s3a://parking/parking_violations/")
-    parkViolations.show(5)
+    parkViolations.show(100)
 
 
 if __name__ == '__main__':

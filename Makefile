@@ -44,7 +44,7 @@ create-tables:
 count-tables:
 	docker exec spark-master spark-sql --master spark://spark-master:7077 --deploy-mode client -f ./count.sql
 
-setup: datagen fake-datagen create-buckets create-tables 
+setup: datagen fake-datagen create-buckets create-tables upload-data-to-s3a
 
 ## Spark UIs: master UI, Spark application UI & History Server UI
 

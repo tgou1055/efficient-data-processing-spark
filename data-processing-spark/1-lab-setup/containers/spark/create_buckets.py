@@ -57,7 +57,7 @@ try:
     create_bucket_if_not_exists(s3_client, bucket_name)
     bucket_name = 'rainforest'# Replace with your bucket name
     create_bucket_if_not_exists(s3_client, bucket_name)
-    bucket_name = 'data' # Replace with your bucket name
+    bucket_name = 'data' # This bucket is for storing exploratory datasets
     create_bucket_if_not_exists(s3_client, bucket_name)
 except:
     print("Full catch, check bucket creation script at create_buckets.py")
