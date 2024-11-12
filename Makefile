@@ -35,6 +35,9 @@ upstream:
 create-buckets:
 	docker exec spark-master bash -c "python3 /opt/spark/work-dir/create_buckets.py"
 
+upload-data-to-s3a:
+	docker exec spark-master bash -c "python3 /opt/spark/work-dir/upload_data_to_s3a.py"
+
 create-tables:
 	docker exec spark-master spark-sql --master spark://spark-master:7077 --deploy-mode client -f ./setup.sql
 

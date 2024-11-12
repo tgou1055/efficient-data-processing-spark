@@ -11,7 +11,7 @@ WHERE
 
 -- 5465 rows
 
-
+-- UNION will keep all unique items in each table.
 SELECT
     custkey,
     name

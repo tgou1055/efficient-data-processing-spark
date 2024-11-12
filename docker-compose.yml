@@ -18,6 +18,7 @@ services:
       - ./data-processing-spark:/opt/spark/work-dir/data-processing-spark
       - spark-logs:/opt/spark/spark-events
       - tpch-data:/opt/spark/tpch-dbgen
+      - ./data:/opt/spark/work-dir/data
     environment:
       UPSTREAM_DRIVERNAME: postgresql
       UPSTREAM_HOST: upstream

@@ -10,6 +10,7 @@ RUN pip install -r requirements.txt
 COPY ./setup.sql ./
 COPY ./count.sql ./
 COPY ./create_buckets.py ./
+COPY ./upload_data_to_s3a.py ./
 
 # Copy tpch data generator into the container
 COPY ./tpch-dbgen ./tpch-dbgen/
