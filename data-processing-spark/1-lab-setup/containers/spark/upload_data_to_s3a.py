@@ -1,3 +1,6 @@
+"""
+Upload data to S3A
+"""
 import os
 import boto3
 from botocore.exceptions import ClientError
@@ -54,9 +57,8 @@ region = 'us-east-1'
 # Client upload directory to s3a
 try:
     s3_client = create_s3_client(access_key, secret_key, endpoint, region)
-    data_directory = '/opt/spark/work-dir/data/'
-    bucket_name = 'data'
-    upload_data_to_s3(s3_client, data_directory, bucket_name)
-
-except:
-    print("Full catch, check bucket creation script at create_buckets.py")
+    DATA_DIRECTORY = '/opt/spark/work-dir/data/'
+    BUCKET_NAME = 'data'
+    upload_data_to_s3(s3_client, DATA_DIRECTORY, BUCKET_NAME)
+except ClientError:
+    print("Full catch, check script at upload_data_to_s3a.py")
