@@ -2,9 +2,9 @@
 Upload data to S3A
 """
 import os
-import boto3
-from botocore.exceptions import ClientError
-from botocore.client import Config
+import boto3                                # type: ignore # pylint: disable=import-error
+from botocore.exceptions import ClientError # type: ignore # pylint: disable=import-error
+from botocore.client import Config          # type: ignore # pylint: disable=import-error
 
 def create_s3_client(access_key, secret_key, endpoint, region):
     """

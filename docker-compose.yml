@@ -72,6 +72,16 @@ services:
       MINIO_SECRET_KEY: minio123
     command: server --console-address ":9001" /data
 
+  # rstudio:
+  #   image: rocker/rstudio
+  #   container_name: rstudio_server
+  #   environment:
+  #     - PASSWORD=rstudio
+  #   ports:
+  #     - "8787:8787"
+  #   volumes:
+  #     - ./rstudio:/home/rstudio
+
   upstream:
     image: postgres:15
     container_name: upstream

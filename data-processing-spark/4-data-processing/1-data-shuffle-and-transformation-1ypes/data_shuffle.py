@@ -1,7 +1,16 @@
-from pyspark.sql import SparkSession
+"""
+Data Shuffle
+"""
+from pyspark.sql import SparkSession # type: ignore # pylint: disable=import-error
 
 
 def run_code(spark):
+    """
+    Spark code runner
+
+    :param: spark: sparkSession object
+    :returns:
+    """
     print("==========================================")
     print("Shuffling data to check for number of partitions")
     print("==========================================")

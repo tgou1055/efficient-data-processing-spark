@@ -39,7 +39,6 @@ def run_code_2(spark):
     # Read data from Minio
     parkViolations = spark.read.option("header", True) \
                           .csv("s3a://data/parking_data/parking_violations/") # pylint: disable=invalid-name
-
     # Do repartition by 'Plate Type'
     parkViolationsPlateTypeDF = parkViolations.repartition(89, "Plate Type") # pylint: disable=invalid-name
     parkViolationsPlateTypeDF.explain()
